@@ -14,10 +14,15 @@ This learning experience is provided by Duckietown in collaboration with
 
 **NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
 
+The recommended way to use this repository is to make a fork and then clone that fork. This can be done through
+the github web interface. However, you are also free to simply clone this repository and get started. 
+
+This exercise can be run on a real Duckiebot or on a virtual Duckiebot in the Duckiematrix. 
 
 ## 1. Make sure your exercise is up-to-date
 
-Update your exercise definition and instructions,
+In case your instructor has updated something in this repo, you should make sure everything is up to date (this assumes
+that you created a fork):
 
     git remote add upstream git@github.com:duckietown/lx-ros-basics
     git pull upstream <branch>
@@ -34,7 +39,8 @@ Update your exercise definition and instructions,
 
 - 💻 Update your laptop/desktop: `dts desktop update`
 
-- 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
+- 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME`
+(where `ROBOTNAME` is the name of your Duckiebot - real or virtual.)
 
 
 ## 3. Work on the exercise
@@ -62,37 +68,60 @@ Inside the code editor, use the navigator sidebar on the left-hand side to navig
 Follow the instructions on the notebook and work through the notebooks in sequence.
 
 
-<<<<<<< HEAD
-### 💻 Testing in the Duckiematrix
+### Testing with the Duckiematrix
 
-To test in simulation, follow the procedure to run the Duckiematrix, create a virtual robot, and attach your virtual robot to an entity in the Duckiematrix. Finally test your code with:
+In order to test your code in the Duckiematrix you will need a virtual robot. You can create one with the command:
 
-    $ dts code workbench --duckiebot YOUR_VIRTUAL_ROBOT_NAME
-=======
+```
+dts duckiebot virtual create [VBOT]
+```
+
+where `[VBOT]` can be anything you like (but remember it for later).
+
+Then you can start your virtual robot with the command:
+
+```
+dts duckiebot virtual start [VBOT]
+```
+
+You should see it with a status `Booting` and finally `Ready` if you look at `dts fleet discover`: 
+
+```
+     | Hardware |   Type    | Model |  Status  | Hostname 
+---  | -------- | --------- | ----- | -------- | ---------
+[VBOT] |  virtual | duckiebot | DB21J |  Ready   | [VBOT].local
+```
+
+Now that your virtual robot is ready you can start the Duckiematrix. From this exercise directory do:
+
+```
+dts code start_matrix
+```
+
+You should see the Unity-based Duckiematrix simulator start up. The startup screen will look like:
+
+![duckiematrix_start](assets/duckiematrix_start.png)
+
+From here you can click anywhere on the window and click [ENTER] to make it become active. From here you can move the duckie towards the Duckiebot with the 'w', 'a', 's', and 'd' keys or you can move the camera angle to view the Duckiebot with the mouse. Alternately, you can change to an overhead view be pressing 'v' which will give you a view that looks like this:
+
+![duckiematrix_overhead](assets/duckiematrix_overhead.png)
+
+
 ### Build the Code
 
 You can build the code with 
 
 ```
-dts code build
+dts code build -R ROBOTNAME
 ```
 
-### 💻 Testing in simulation
+where ROBOTNAME can be either a real or virtual robot. 
 
-To test in simulation, you should [create a virtual robot and connect it to the duckiematrix](https://docs.duckietown.com/ente/devmanual-duckiematrix/intermediate/virtual-duckiebots/intro.html)
+###  Testing the code
 
 Then you may run your code with 
 
-    $ dts code workbench --duckiebot YOUR_VIRTUAL_DUCKIEBOT
+    $ dts code workbench -R ROBOTNAME [-m]
 
-There should be a link to the `novnc` browser that you can use to monitor the progress and test your code. 
-
-
-### 🚙 Testing on a physical robot
-
-You can test your agent on the robot using the command,
-
-    dts code workbench --duckiebot YOUR_DUCKIEBOT_NAME
-
-This is the modality "everything runs on the robot".
-
+where ROBOTNAME can be either a real or virtual robot, but if it is a virtual robot you should include the `-m` option
+to indicate that you want to test it in the Duckiematrix. 
