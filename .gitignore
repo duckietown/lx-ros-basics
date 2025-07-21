@@ -13,7 +13,6 @@ workspace/src
 
 .DS_Store
 
-packages/*
 packages/.catkin_tools/*
 packages/build/*
 packages/devel/*
