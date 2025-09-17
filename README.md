@@ -125,3 +125,6 @@ Then you may run your code with
 
 where ROBOTNAME can be either a real or virtual robot, but if it is a virtual robot you should include the `-m` option
 to indicate that you want to test it in the Duckiematrix. 
+
+
+**Time to [Start the first Notebook!](./notebooks/01_navigating_file_system.ipynb)**
