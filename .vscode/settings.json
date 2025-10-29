@@ -16,9 +16,5 @@
         ".pytest_cache": true,
         ".dtproject": true
     },
-    "workbench.tree.indent": 24,
-    "notebook.dragAndDropEnabled": false,
-    "workbench.colorTheme": "Default Light+",
-    "workbench.iconTheme": "vs-minimal",
-    "editor.suggest.showIcons": true
+    "workbench.tree.indent": 24
 }
