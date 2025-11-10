@@ -4,7 +4,7 @@
 
 # **Learning Experience (LX): ROS Basics**
 
-Find the most up-to-date instructions on [how to run LXs on the Duckietown manual](https://docs.duckietown.com/ente/duckietown-manual/60-learning-experiences/lx-general-procedure.html). 
+Find the most up-to-date instructions on [how to run LXs on the Duckietown manual](https://docs.duckietown.com/en/duckietown-manual/60-learning-experiences/lx-general-procedure.html). 
 
 # About these activities
 
