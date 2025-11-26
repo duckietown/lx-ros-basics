@@ -117,7 +117,7 @@ dts code build -R ROBOTNAME
 
 where ROBOTNAME can be either a real or virtual robot. 
 
-###  Testing the code
+### Testing the code
 
 Then you may run your code with 
 
