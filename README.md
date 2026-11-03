@@ -33,11 +33,11 @@ that you created a fork):
 
 ## 2. Make sure your system is up-to-date
 
-- 💻 Always make sure your Duckietown Shell is updated to the latest version. See [installation instructions](https://github.com/duckietown/duckietown-shell)
+- 💻 Always make sure your Duckietown Shell is updated to the latest version: `pipx upgrade duckietown-shell` (see the [installation instructions](https://github.com/duckietown/duckietown-shell))
 
 - 💻 Update the shell commands: `dts update`
 
-- 💻 Update your laptop/desktop: `dts desktop update`
+- 💻 Make sure all the Docker images on your laptop/desktop are up to date: `dts desktop update`
 
 - 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME`
 (where `ROBOTNAME` is the name of your Duckiebot - real or virtual.)
@@ -47,7 +47,7 @@ that you created a fork):
 
 ### Launch the code editor
 
-Open the code editor by running the following command,
+Open the code editor (VSCode) by running the following command,
 
 ```
 dts code editor
@@ -67,8 +67,14 @@ Inside the code editor, use the navigator sidebar on the left-hand side to navig
 
 Follow the instructions on the notebook and work through the notebooks in sequence.
 
+Once you have completed all the tasks in the notebooks, you can follow the instructions below to test your code.
 
-### Testing with the Duckiematrix
+
+## 4. Run your code
+
+### Testing with the Duckiematrix (optional)
+
+It can be useful to test your code in a simulation environment before trying it on the real robot. For this, we have the Duckiematrix.
 
 To test your code in the Duckiematrix, you will need a virtual robot. You can create one with the command:
 
@@ -121,13 +127,15 @@ where ROBOTNAME can be either a real or virtual robot.
 
 Then you may run your code with 
 
-    $ dts code workbench -R ROBOTNAME [-m]
+```
+dts code workbench -R ROBOTNAME [-m]
+```
 
 where ROBOTNAME can be either a real or virtual robot, but if it is a virtual robot, you should include the `-m` option
 to indicate that you want to test it in the Duckiematrix. 
 
 
-**Time to [Start the first Notebook!](./notebooks/01_navigating_file_system.ipynb)**
+If you haven't already, **it's time to [start the first notebook!](./notebooks/01_navigating_file_system.ipynb)**
 
 ## Credits
 
